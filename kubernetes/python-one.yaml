@@ -1,0 +1,26 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: python-one
+  labels:
+    app: python-one
+spec:
+  containers:
+    - name: python-one
+      image: one:latest
+      imagePullPolicy: Never # req'd for minikube dockerfile "hack"
+      env:
+      - name: KAFKA_TOPIC
+        value: "testtwo"
+      - name: KAFKA_BOOTSTRAP_SERVERS
+        value: "kafka:9092"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: python-one-service
+spec:
+  selector:
+    app: python-one
+  ports:
+    - port: 8000 # Default port for image
