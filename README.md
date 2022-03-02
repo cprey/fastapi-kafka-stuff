@@ -40,9 +40,14 @@ That one tutorial in python that shows an interaction with Kafka.
     * http://`minikube ip`/docs - OpenAPI docs
     * http://`minikube ip`/ - "Classic" Hello, world
 
+1. fire off an update to kafka using the app
+
+    * `kubectl exec -it python-one python app/producer.py`
+    * check for the update in the browser using the _state_ http://`minikube ip`/state
+
 1. show logs
 
-    * kubectl logs -f python-one
+    * kubectl logs -f python-one # -f is follow - CTRL+c to stop
     * kubectl logs -f kafka-0
 
 ## make changes to app and rebuild
