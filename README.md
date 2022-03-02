@@ -29,16 +29,16 @@ That one tutorial in python that shows an interaction with Kafka.
     * `kubectl apply -f ingress.yaml`
 
 1. test it out
-    * `curl $(minikube ip):8000`
-    * `curl $(minikube ip):8000/docs`
+    * `curl $(minikube ip)/`
+    * `curl $(minikube ip)/docs`
 
 1. fire off a call to producer
     * `kubectl exec -it python-one -- python app/producer.py`
 
 1. use a browser to look at changes
-    * http://minikube-ip:8000/state
-    * http://minikube-ip:8000/docs - OpenAPI docs
-    * http://minikube-ip:8000/ - "Classic" Hello, world
+    * http://`minikube ip`/state
+    * http://`minikube ip`/docs - OpenAPI docs
+    * http://`minikube ip`/ - "Classic" Hello, world
 
 1. show logs
 

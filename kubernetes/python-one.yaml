@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: python-one
-      image: one:latest
+      image: python-one:latest
       imagePullPolicy: Never # req'd for minikube dockerfile "hack"
       env:
       - name: KAFKA_TOPIC
